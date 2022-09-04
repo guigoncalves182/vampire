@@ -6,6 +6,9 @@
   box-sizing: border-box;
   max-width: 210mm;
   min-height: 297mm;
+  @media screen and (max-width: $md) {
+    margin: 0.25em;
+  }
 
   ul {
     list-style: none;
@@ -22,9 +25,6 @@
       grid-template-columns: repeat(1, 1fr); 
     }
     gap:1em;
-    // align-content: space-between;
-    align-content: space-between;
-  justify-content: space-around;
   }
 
   .logo {
