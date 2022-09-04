@@ -10,6 +10,13 @@
     margin: 0.25em;
   }
 
+  @media print {
+    margin: 0;
+    border: none;
+    width: 210mm;
+    height: 296mm;
+  }
+
   ul {
     list-style: none;
   }
