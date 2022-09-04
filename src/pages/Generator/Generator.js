@@ -185,7 +185,7 @@ function Generator() {
             </ul>
           </div>
           <div>
-            <h1 className={styles.subtitle}>Talentos</h1>
+            <h1 className={styles.subtitle}>Perícias</h1>
             <ul>
               <li>
                 <Status
@@ -250,7 +250,7 @@ function Generator() {
             </ul>
           </div>
           <div>
-            <h1 className={styles.subtitle}>Talentos</h1>
+            <h1 className={styles.subtitle}>Conhecimentos</h1>
             <ul>
               <li>
                 <Status
