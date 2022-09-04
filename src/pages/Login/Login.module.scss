@@ -1,0 +1,17 @@
+@import "../../globals/variables";
+
+.home {
+  background: $light-cyan;
+  border: 3px solid $tiffany-blue;
+  border-radius: 1em;
+  text-align: center;
+  color: $tiffany-blue;
+}
+
+.title {
+  font-size: larger;
+}
+
+.text {
+  font-size: large;
+}

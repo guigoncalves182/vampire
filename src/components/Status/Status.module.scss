@@ -1,0 +1,20 @@
+@import "../../globals/variables";
+
+.status {
+  display: grid;
+  grid-template-columns: auto auto fit-content(5ch);
+  padding: .1em
+}
+
+.name{
+  white-space: nowrap;
+}
+
+.dash{
+  overflow: hidden;
+}
+
+.dots{
+  text-align: end;
+  font-size: 0.75em;
+}

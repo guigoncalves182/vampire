@@ -1,0 +1,48 @@
+@import "../../globals/variables";
+
+.ficha {
+  border: 0.25em solid $black;
+  margin: 1em auto;
+  box-sizing: border-box;
+  max-width: 210mm;
+  min-height: 297mm;
+
+  ul {
+    list-style: none;
+  }
+
+  section {
+    padding: 1em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    @media screen and (max-width: $md) {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+    gap:1em;
+    // align-content: space-between;
+    align-content: space-between;
+  justify-content: space-around;
+  }
+
+  .logo {
+    display: block;
+    margin: 0.5em auto;
+    height: 8em;
+  }
+
+  .title {
+    font-size: x-large;
+    text-align: center;
+    margin: 0.5em auto;
+    border-bottom: 0.1em solid $black;
+  }
+
+  .subtitle{
+    font-size: large;
+    text-align: center;
+    margin: 0.5em auto;
+  }
+}
