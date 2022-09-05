@@ -94,7 +94,12 @@ export class Vampiro {
   
       atributos: [7, 5, 3],
       habilidades: [13, 9, 5],
-      shuffle: false,
+      virtudes: {
+        conscienciaConviccao:0,
+        autoControleInstinto:0,
+        Coragem:0
+      },
+
       ...rec,
     }
 
@@ -109,6 +114,8 @@ export class Vampiro {
     this.geracao = obj.geracao;
     this.senhor = obj.senhor;
     this.conceito = obj.conceito;
+
+    this.vantagens.virtudes = obj.virtudes;
 
     this.#gerarAtributos(obj.atributos);
     this.#gerarHabilidades(obj.habilidades);
@@ -154,4 +161,6 @@ export class Vampiro {
       }
     });
   }
+
+  #gerarVirtudes(){};
 }

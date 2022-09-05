@@ -4,13 +4,14 @@ import logo from "./images/VaM_Logo.png";
 import { Vampiro } from "../../components/Vampiro";
 
 function Generator() {
-  // let vampiro = new Vampiro({
-  //   nome: "Gui",
-  //   cla: "Nosferatu",
-  //   geracao: 11,
-  //   atributos: [9, 7, 5],
-  // });
-  let vampiro = new Vampiro();
+  let vampiro = new Vampiro({
+    virtudes: {
+      conscienciaConviccao:3,
+      autoControleInstinto:2,
+      Coragem:1
+    },
+  });
+
   console.log(vampiro);
 
   return (
