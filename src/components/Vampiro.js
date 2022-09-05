@@ -1,17 +1,15 @@
-import { rand, shuffle } from "./Randomizer"
+import { rand, shuffle } from "./Randomizer";
 
 export class Vampiro {
-  cabecalho = {
-    nome: "",
-    jogador: "",
-    cronica: "",
-    natureza: "",
-    comportamento: "",
-    cla: "",
-    geracao: "",
-    senhor: "",
-    conceito: "",
-  };
+  nome;
+  jogador;
+  cronica;
+  natureza;
+  comportamento;
+  cla;
+  geracao;
+  senhor;
+  conceito;
 
   atributos = {
     fisicos: {
@@ -30,7 +28,7 @@ export class Vampiro {
       raciocinio: 1,
     },
   };
-  
+
   habilidades = {
     talentos: {
       prontidao: 0,
@@ -70,25 +68,53 @@ export class Vampiro {
     },
   };
 
-  constructor(nome, cla, geracao, atributos = [7, 5 ,3], habilidades = [13, 9, 5], shuffle = false) {
-    this.cabecalho.nome = nome || "Indigente";
-    this.cabecalho.jogador = "" || "Fulano";
-    this.cabecalho.cronica = "" || "Era uma vez";
+  vantagens = {
+    antecedentes: [],
+    disciplinas: [],
+    virtudes: {
+      conscienciaConviccao:0,
+      autoControleInstinto:0,
+      Coragem:0
+    }
+  };
 
-    this.cabecalho.natureza = "" || "";
-    this.cabecalho.comportamento = "" || "";
-    this.cabecalho.cla = cla || "Caitiff";
+  constructor(rec) {
+    let obj = {
+      nome: "Indigente",
+      jogador: "Fulano de Tal",
+      cronica: "Era uma vez",
+  
+      natureza: "",
+      comportamento: "",
+      cla: "Caitiff",
+  
+      geracao: 13,
+      senhor: "Desconhecido",
+      conceito: "Indiferente",
+  
+      atributos: [7, 5, 3],
+      habilidades: [13, 9, 5],
+      shuffle: false,
+      ...rec,
+    }
 
-    this.cabecalho.geracao = geracao || 13;
-    this.cabecalho.senhor = "" || "Desconhecido";
-    this.cabecalho.conceito = "" || "Indiferente";
+    this.nome = obj.nome;
+    this.jogador = obj.jogador;
+    this.cronica = obj.cronica;
 
-    this.#gerarAtributos(atributos);
-    this.#gerarHabilidades(habilidades);
+    this.natureza = obj.natureza;
+    this.comportamento = obj.comportamento;
+    this.cla = obj.cla;
+
+    this.geracao = obj.geracao;
+    this.senhor = obj.senhor;
+    this.conceito = obj.conceito;
+
+    this.#gerarAtributos(obj.atributos);
+    this.#gerarHabilidades(obj.habilidades);
   }
 
   #gerarAtributos(array, shuff) {
-    // [7, 5, 3]
     let pontos = shuff ? shuffle(array) : array;
     let atributos = shuffle(Object.keys(this.atributos));
 
@@ -99,7 +125,6 @@ export class Vampiro {
         if (this.cla === "Nosferatu" && alvo === "aparencia") {
           atual--;
           continue;
-          
         }
         if (this.geracao === 13 && this.atributos[atributo][alvo] === 5) {
           atual--;
@@ -113,7 +138,6 @@ export class Vampiro {
   }
 
   #gerarHabilidades(array, shuff) {
-    // [13, 9, 5]
     let pontos = shuff ? shuffle(array) : array;
     let habilidades = shuffle(Object.keys(this.habilidades));
 

@@ -4,15 +4,12 @@ import logo from "./images/VaM_Logo.png";
 import { Vampiro } from "../../components/Vampiro";
 
 function Generator() {
-  // let vampiro = new Vampiro(
-  //   "Guilherme",
-  //   "Brujah",
-  //   13,
-  //   [7, 5, 3],
-  //   [13, 9, 5],
-  //   false
-  // );
-  let vampiro = new Vampiro();
+  let vampiro = new Vampiro({
+    nome:"Gui",
+    cla: "Nosferatu",
+    geracao: 11,
+    atributos: [9, 7, 5],
+  });
   console.log(vampiro);
 
   return (
@@ -23,25 +20,25 @@ function Generator() {
         <div className={styles.grid}>
           <div>
             <ul>
-              <li>Nome: {vampiro.cabecalho.nome}</li>
-              <li>Jogador: {vampiro.cabecalho.jogador}</li>
-              <li>Crônica: {vampiro.cabecalho.cronica}</li>
+              <li>Nome: {vampiro.nome}</li>
+              <li>Jogador: {vampiro.jogador}</li>
+              <li>Crônica: {vampiro.cronica}</li>
             </ul>
           </div>
 
           <div>
             <ul>
-              <li>Natureza: {vampiro.cabecalho.natureza}</li>
-              <li>Comportamento: {vampiro.cabecalho.comportamento}</li>
-              <li>Clã: {vampiro.cabecalho.cla}</li>
+              <li>Natureza: {vampiro.natureza}</li>
+              <li>Comportamento: {vampiro.comportamento}</li>
+              <li>Clã: {vampiro.cla}</li>
             </ul>
           </div>
 
           <div>
             <ul>
-              <li>Geração: {vampiro.cabecalho.geracao}</li>
-              <li>Senhor: {vampiro.cabecalho.senhor}</li>
-              <li>Conceito: {vampiro.cabecalho.conceito}</li>
+              <li>Geração: {vampiro.geracao}</li>
+              <li>Senhor: {vampiro.senhor}</li>
+              <li>Conceito: {vampiro.conceito}</li>
             </ul>
           </div>
         </div>
@@ -354,9 +351,9 @@ function Generator() {
             <h1 className={styles.subtitle}>Virtudes</h1>
             <ul>
               <li>
-                <Status name="Consciência / Convicção" value="1"/>
-                <Status name="Auto-Controle / Instinto" value="1"/>
-                <Status name="Coragem" value="1"/>
+                <Status name="Consciência / Convicção" value={vampiro.vantagens.virtudes.conscienciaConviccao}/>
+                <Status name="Auto-Controle / Instinto" value={vampiro.vantagens.virtudes.autoControleInstinto}/>
+                <Status name="Coragem" value={vampiro.vantagens.virtudes.Coragem}/>
               </li>
             </ul>
           </div>
