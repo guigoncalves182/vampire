@@ -4,12 +4,13 @@ import logo from "./images/VaM_Logo.png";
 import { Vampiro } from "../../components/Vampiro";
 
 function Generator() {
-  let vampiro = new Vampiro({
-    nome:"Gui",
-    cla: "Nosferatu",
-    geracao: 11,
-    atributos: [9, 7, 5],
-  });
+  // let vampiro = new Vampiro({
+  //   nome: "Gui",
+  //   cla: "Nosferatu",
+  //   geracao: 11,
+  //   atributos: [9, 7, 5],
+  // });
+  let vampiro = new Vampiro();
   console.log(vampiro);
 
   return (
@@ -315,7 +316,7 @@ function Generator() {
       </section>
 
       <section className={styles.vantagens}>
-      <h1 className={styles.title}>Vantagens</h1>
+        <h1 className={styles.title}>Vantagens</h1>
         <div className={styles.grid}>
           <div>
             <h1 className={styles.subtitle}>Antecedentes</h1>
@@ -351,9 +352,18 @@ function Generator() {
             <h1 className={styles.subtitle}>Virtudes</h1>
             <ul>
               <li>
-                <Status name="Consciência / Convicção" value={vampiro.vantagens.virtudes.conscienciaConviccao}/>
-                <Status name="Auto-Controle / Instinto" value={vampiro.vantagens.virtudes.autoControleInstinto}/>
-                <Status name="Coragem" value={vampiro.vantagens.virtudes.Coragem}/>
+                <Status
+                  name="Consciência / Convicção"
+                  value={vampiro.vantagens.virtudes.conscienciaConviccao}
+                />
+                <Status
+                  name="Auto-Controle / Instinto"
+                  value={vampiro.vantagens.virtudes.autoControleInstinto}
+                />
+                <Status
+                  name="Coragem"
+                  value={vampiro.vantagens.virtudes.Coragem}
+                />
               </li>
             </ul>
           </div>
