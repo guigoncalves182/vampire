@@ -78,6 +78,11 @@ export default class Vampiro {
     },
   };
 
+  humanidadeTrilha;
+  forcaDeVontade;
+  pontosDeSangue;
+
+
   constructor(rec) {
     let obj = {
       nome: "Indigente",
@@ -111,7 +116,8 @@ export default class Vampiro {
     this.#gerarHabilidades(obj.habilidades);
     this.#gerarVirtudes(obj.vantagens.virtudes);
 
-    
+    this.humanidadeTrilha = this.vantagens.virtudes.autoControleInstinto + this.vantagens.virtudes.conscienciaConviccao;
+    this.forcaDeVontade = this.vantagens.virtudes.Coragem;
 
   }
 

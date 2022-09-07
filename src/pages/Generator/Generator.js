@@ -3,6 +3,7 @@ import styles from "./Generator.module.scss";
 import logo from "./images/VaM_Logo.png";
 // import Separator from "./images/Separator.png";
 import Vampiro from "../../components/Vampiro";
+import Vitalidade from "../../components/Vitalidade/Vitalidade";
 
 function Generator() {
   let vampiro = new Vampiro();
@@ -416,13 +417,13 @@ function Generator() {
           <div>
             <h1 className={styles.subtitle}>Humanidade/Trilha</h1>
             <ul>
-              <li><Status full size="10" value={vampiro.vantagens.virtudes.conscienciaConviccao += vampiro.vantagens.virtudes.autoControleInstinto}/></li>
+              <li><Status full size="10" value={vampiro.humanidadeTrilha}/></li>
             </ul>
  
             <h1 className={styles.subtitle}>Força de vontade</h1>
             <ul>
-              <li><Status full value={vampiro.vantagens.virtudes.Coragem} size="10"/></li>
-              <li><Status full value={vampiro.vantagens.virtudes.Coragem} square size="10"/></li>
+              <li><Status full value={vampiro.forcaDeVontade} size="10"/></li>
+              <li><Status full value={vampiro.forcaDeVontade} square size="10"/></li>
             </ul>
 
             <h1 className={styles.subtitle}>Pontos de Sangue</h1>
@@ -435,13 +436,13 @@ function Generator() {
           <div>
             <h1 className={styles.subtitle}>Vitalidade</h1>
             <ul>
-              <li>Escoriado</li>
-              <li>Machucado</li>
-              <li>Ferido</li>
-              <li>Ferido gravemente</li>
-              <li>Espancado</li>
-              <li>Aleijado</li>
-              <li>Incapacitado</li>
+              <li><Vitalidade name="Escoriado" penalty="0"/></li>
+              <li><Vitalidade name="Machucado" penalty="-1"/></li>
+              <li><Vitalidade name="Ferido" penalty="-1"/></li>
+              <li><Vitalidade name="Ferido gravemente" penalty="-2"/></li>
+              <li><Vitalidade name="Espancado" penalty="-2"/></li>
+              <li><Vitalidade name="Aleijado" penalty="-5"/></li>
+              <li><Vitalidade name="Incapacitado"/></li>
             </ul>
 
             <h1 className={styles.subtitle}>Experiência</h1>
