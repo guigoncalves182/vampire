@@ -1,17 +1,11 @@
 import Status from "../../components/Status/Status";
 import styles from "./Generator.module.scss";
 import logo from "./images/VaM_Logo.png";
-import { Vampiro } from "../../components/Vampiro";
+// import Separator from "./images/Separator.png";
+import Vampiro from "../../components/Vampiro";
 
 function Generator() {
-  let vampiro = new Vampiro({
-    virtudes: {
-      conscienciaConviccao:3,
-      autoControleInstinto:2,
-      Coragem:1
-    },
-  });
-
+  let vampiro = new Vampiro();
   console.log(vampiro);
 
   return (
@@ -324,11 +318,23 @@ function Generator() {
             <ul>
               <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
               </li>
             </ul>
@@ -339,11 +345,23 @@ function Generator() {
             <ul>
               <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
+              </li>
+              <li>
                 <Status />
               </li>
             </ul>
@@ -357,10 +375,14 @@ function Generator() {
                   name="Consciência / Convicção"
                   value={vampiro.vantagens.virtudes.conscienciaConviccao}
                 />
+              </li>
+              <li>
                 <Status
                   name="Auto-Controle / Instinto"
                   value={vampiro.vantagens.virtudes.autoControleInstinto}
                 />
+              </li>
+              <li>
                 <Status
                   name="Coragem"
                   value={vampiro.vantagens.virtudes.Coragem}
@@ -371,9 +393,62 @@ function Generator() {
         </div>
       </section>
 
-      {/* <section className={styles.outros}>
+      <section className={styles.outros}>
         <h1 className={styles.title}>Outros</h1>
-      </section> */}
+        <div className={styles.grid}>
+          <div>
+            <h1 className={styles.subtitle}>Qualidades/Defeitos</h1>
+            <ul>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+              <li><Status size="0"/></li>
+            </ul>
+          </div>
+
+          <div>
+            <h1 className={styles.subtitle}>Humanidade/Trilha</h1>
+            <ul>
+              <li><Status full size="10" value={vampiro.vantagens.virtudes.conscienciaConviccao += vampiro.vantagens.virtudes.autoControleInstinto}/></li>
+            </ul>
+ 
+            <h1 className={styles.subtitle}>Força de vontade</h1>
+            <ul>
+              <li><Status full value={vampiro.vantagens.virtudes.Coragem} size="10"/></li>
+              <li><Status full value={vampiro.vantagens.virtudes.Coragem} square size="10"/></li>
+            </ul>
+
+            <h1 className={styles.subtitle}>Pontos de Sangue</h1>
+            <ul>
+              <li><Status full value={10} square size="10"/></li>
+              <li><Status full square size="10"/></li>
+            </ul>
+          </div>
+
+          <div>
+            <h1 className={styles.subtitle}>Vitalidade</h1>
+            <ul>
+              <li>Escoriado</li>
+              <li>Machucado</li>
+              <li>Ferido</li>
+              <li>Ferido gravemente</li>
+              <li>Espancado</li>
+              <li>Aleijado</li>
+              <li>Incapacitado</li>
+            </ul>
+
+            <h1 className={styles.subtitle}>Experiência</h1>
+
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

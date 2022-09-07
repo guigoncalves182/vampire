@@ -22,34 +22,36 @@
   }
 
   section {
-    padding: 1em;
+    padding: .25em 1em;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     @media screen and (max-width: $md) {
-      grid-template-columns: repeat(1, 1fr); 
+      grid-template-columns: repeat(1, 1fr);
     }
-    gap:1em;
+    gap: 1em;
   }
 
   .logo {
     display: block;
-    margin: 0.5em auto;
-    height: 8em;
+    margin: 0.2em auto;
+    height: 4.5em;
   }
 
   .title {
     font-size: x-large;
     text-align: center;
-    margin: 0.5em auto;
-    border-bottom: 0.1em solid $black;
+    margin: 0.25em auto;
+    border-bottom: 3px solid $black;
+    // background: url(./images/Separator.png) center no-repeat;
+    // background-size: cover;
   }
 
-  .subtitle{
+  .subtitle {
     font-size: large;
     text-align: center;
-    margin: 0.5em auto;
+    margin: 0.25em auto;
   }
 }

@@ -1,6 +1,6 @@
 import { rand, shuffle } from "./Randomizer";
 
-export class Vampiro {
+export default class Vampiro {
   nome;
   jogador;
   cronica;
@@ -72,10 +72,10 @@ export class Vampiro {
     antecedentes: [],
     disciplinas: [],
     virtudes: {
-      conscienciaConviccao:0,
-      autoControleInstinto:0,
-      Coragem:0
-    }
+      conscienciaConviccao: 1,
+      autoControleInstinto: 1,
+      Coragem: 1,
+    },
   };
 
   constructor(rec) {
@@ -83,25 +83,17 @@ export class Vampiro {
       nome: "Indigente",
       jogador: "Fulano de Tal",
       cronica: "Era uma vez",
-  
       natureza: "",
       comportamento: "",
       cla: "Caitiff",
-  
       geracao: 13,
       senhor: "Desconhecido",
       conceito: "Indiferente",
-  
       atributos: [7, 5, 3],
       habilidades: [13, 9, 5],
-      virtudes: {
-        conscienciaConviccao:0,
-        autoControleInstinto:0,
-        Coragem:0
-      },
-
+      vantagens: { virtudes: 7 },
       ...rec,
-    }
+    };
 
     this.nome = obj.nome;
     this.jogador = obj.jogador;
@@ -115,10 +107,12 @@ export class Vampiro {
     this.senhor = obj.senhor;
     this.conceito = obj.conceito;
 
-    this.vantagens.virtudes = obj.virtudes;
-
     this.#gerarAtributos(obj.atributos);
     this.#gerarHabilidades(obj.habilidades);
+    this.#gerarVirtudes(obj.vantagens.virtudes);
+
+    
+
   }
 
   #gerarAtributos(array, shuff) {
@@ -162,5 +156,14 @@ export class Vampiro {
     });
   }
 
-  #gerarVirtudes(){};
+  #gerarVirtudes(pontos) {
+    for (var atual = 0; atual < pontos; atual++) {
+      let alvo = Object.keys(this.vantagens.virtudes)[rand(0, 2)];
+      if (this.geracao === 13 && this.vantagens.virtudes[alvo] === 5) {
+        atual--;
+        continue;
+      }
+      this.vantagens.virtudes[alvo]++;
+    }
+  }
 }
