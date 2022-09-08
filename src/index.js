@@ -19,7 +19,8 @@ root.render(
       <Routes>
         {/* <Route path="/" element={<Layout />}> */}
         <Route path="/">
-          <Route index element={<Home />} />
+          <Route index element={<Generator />} />
+          <Route path="home" element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="generator" element={<Generator />} />
           <Route path="secret" element={<Private><Secret /></Private>} />
