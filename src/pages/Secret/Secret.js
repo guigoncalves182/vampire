@@ -10,7 +10,7 @@ function Secret() {
       <h1 className={styles.title}>{user.nome}</h1>
       <img className={styles.avatar} src={user.avatar} alt="Avatar do usuário" />
       <hr />
-      <button onClick={logout}>
+      <button className={styles.button} onClick={logout}>
         Logout
       </button>
     </div>
