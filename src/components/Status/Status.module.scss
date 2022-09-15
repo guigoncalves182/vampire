@@ -1,6 +1,7 @@
 @import "../../globals/variables";
 
 .status {
+  cursor:default;
   display: grid;
   grid-template-columns: auto auto fit-content(5ch);
   padding: .1em
@@ -15,8 +16,8 @@
 }
 
 .dots{
+  
   // text-align: end;
   font-size: 0.75em;
   text-align-last: justify;
-
 }

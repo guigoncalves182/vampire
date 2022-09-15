@@ -1,4 +1,5 @@
 @import "./variables";
+@import "~bootstrap/scss/bootstrap";
 
 *,
 *::after,
@@ -6,4 +7,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::selection{
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
 }

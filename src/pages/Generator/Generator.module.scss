@@ -1,57 +1,9 @@
 @import "../../globals/variables";
 
-.ficha {
-  border: 0.25em solid $black;
-  margin: 1em auto;
-  box-sizing: border-box;
-  max-width: 210mm;
-  min-height: 297mm;
-  @media screen and (max-width: $md) {
-    margin: 0.25em;
-  }
+.container {
+  padding: 1em;
+}
 
-  @media print {
-    margin: 0;
-    border: none;
-    width: 210mm;
-    height: 296mm;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  section {
-    padding: .25em 1em;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    @media screen and (max-width: $md) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    gap: 1em;
-  }
-
-  .logo {
-    display: block;
-    margin: 0.2em auto;
-    height: 4.5em;
-  }
-
-  .title {
-    font-size: x-large;
-    text-align: center;
-    margin: 0.25em auto;
-    border-bottom: 3px solid $black;
-    // background: url(./images/Separator.png) center no-repeat;
-    // background-size: cover;
-  }
-
-  .subtitle {
-    font-size: large;
-    text-align: center;
-    margin: 0.25em auto;
-  }
+.input {
+  margin: 0.5em auto;
 }
