@@ -4,6 +4,8 @@ import axios from "axios";
 
 export const AuthContext = createContext();
 
+const API_URL = process.env.REACT_APP_API_URL_OPORTUNIDADES;
+
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -27,7 +29,7 @@ export function AuthProvider({ children }) {
 
     const config = {
       method: "post",
-      url: "https://oportunidades.recode.org.br/api/login",
+      url: API_URL,
 
       headers: {
         "Content-Type": "application/json",

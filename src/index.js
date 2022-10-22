@@ -11,6 +11,8 @@ import Login from "./pages/Login/Login";
 import Secret from "./pages/Secret/Secret";
 import Generator from "./pages/Generator/Generator";
 import NoPage from "./pages/NoPage";
+import Ficha from "./components/Ficha/Ficha";
+// import Layout from "./pages/Layout/Layout";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,11 +23,11 @@ root.render(
         {/* <Route path="/" element={<Layout />}> */}
         <Route path="/">
           <Route index element={<Generator />} />
+          <Route path="ficha" element={<Ficha />} />
           <Route path="home" element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="generator" element={<Generator />} />
           <Route path="secret" element={<Private><Secret /></Private>} />
-
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

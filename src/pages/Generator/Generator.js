@@ -17,8 +17,6 @@ export default function Generator() {
         setVampiro={setVampiro}
       />
 
-      <hr />
-
       {vampiro && <Ficha vampiro={vampiro} />}
     </Container>
   );
