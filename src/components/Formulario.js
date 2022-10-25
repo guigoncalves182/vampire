@@ -5,8 +5,29 @@ import Col from "react-bootstrap/Col";
 import Stack from "react-bootstrap/Stack";
 import styles from "../pages/Generator/Generator.module.scss";
 import { gerador } from "./Vampiro";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Formulario({ form, setForm, vampiro, setVampiro }) {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  async function saveVampiro(vamp) {
+    await fetch(process.env.REACT_APP_API_URL + "vampiro", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(vamp),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        navigate("/" + result.insertedId);
+      })
+      .catch((error) => console.log("error", error))
+      .finally(() => setLoading(false));
+  }
+
   return (
     <Form
       onSubmit={(e) => {
@@ -105,19 +126,33 @@ export default function Formulario({ form, setForm, vampiro, setVampiro }) {
       </Row>
       <Stack gap={3}>
         <Button type="submit" variant="dark" className={styles.button}>
-          Gerar
+          {(!vampiro && "Gerar") || "Regerar"}
         </Button>
         {vampiro && (
-          <Button
-            className={styles.button}
-            variant="outline-dark"
-            onClick={(e) => {
-              e.preventDefault();
-              setVampiro();
-            }}
-          >
-            Limpar
-          </Button>
+          <>
+            <Button
+              className={styles.button}
+              variant="outline-dark"
+              onClick={(e) => {
+                e.preventDefault();
+                setVampiro();
+              }}
+            >
+              Limpar
+            </Button>
+
+            <Button
+              type="button"
+              variant="dark"
+              className={styles.button}
+              onClick={() => {
+                setLoading(true);
+                saveVampiro(vampiro);
+              }}
+            >
+              {(!loading && "Salvar") || "Salvando"}
+            </Button>
+          </>
         )}
       </Stack>
     </Form>

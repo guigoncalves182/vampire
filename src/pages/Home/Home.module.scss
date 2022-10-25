@@ -1,26 +1,2 @@
 @import "../../globals/variables";
 
-.home {
-  background: $light-cyan;
-  border: 3px solid $tiffany-blue;
-  border-radius: 1em;
-  text-align: center;
-  color: $tiffany-blue;
-}
-
-.title {
-  font-size: larger;
-}
-
-.text {
-  font-size: large;
-}
-
-.button {
-  border: 3px solid $orange-peel;
-  background: $mellow-apricot;
-  border-radius: 0.5em;
-  padding: 1em;
-  margin: 1em;
-  cursor: pointer;
-}

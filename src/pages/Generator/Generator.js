@@ -18,6 +18,7 @@ export default function Generator() {
       />
 
       {vampiro && <Ficha vampiro={vampiro} />}
+
     </Container>
   );
 }
